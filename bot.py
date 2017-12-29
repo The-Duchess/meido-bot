@@ -28,7 +28,7 @@ for l in lines:
 
 weatherFetch = pyowm.OWM(keyList['weatherAppKey'])
 
-description = '''meido chan is here to help you, master.'''
+description = '''meido chan is here to help you master.'''
 history = []
 
 class MeidoBot(commands.Bot):
@@ -49,8 +49,8 @@ class MeidoBot(commands.Bot):
                     new = re.sub(match.group('find'), match.group('replace'), original, 1)
 
                 if new != original:
-                    usr = m.author.nick
-                    await self.send_message(message.channel, f'{message.author.mention()} meant: {new}')
+                    # usr = m.author.nick
+                    await self.send_message(message.channel, f'{message.author.mention} meant: {new}')
                     break
         else:
             await super().on_message(message)
